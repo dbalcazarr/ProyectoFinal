@@ -1,10 +1,17 @@
-<?php 
-  define('BASEURL','http://localhost:8080/PWeb/PrograWeb_verano/practica10');
- /*
+<?php
 
-  session_start();
   include ('../layouts/header.php');
-  */
+  include ('../../libs/adodb5/adodb-pager.inc.php');
+  include ('../../libs/adodb5/adodb.inc.php');
+  include ('../../models/Conexion.php');
+  include ('../../models/Modelo.php');
+  include ('../../models/Revista.php');
+  include ('../../controllers/RevistaController.php');
+  include ('../../libs/Er.php');
+
+  
+  $revistaC=new RevistaController();
+	  
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +49,7 @@
     
     <div class="row">
         <div class='col-md-12'>
-                Aqui va la consulta de la clase revista
+                <?php echo $revistaC->show_grid(); ?>
         </div>
     </div>
 

@@ -1,6 +1,6 @@
-<?php 
+<?php
 /* Esta variable la tienen que cambiar */
-  define('BASEURL','http://localhost:8080/PWeb/ProyectoFinal');
+  define('BASEURL','http://localhost:8080/PrograWebVerano/ProyectoFinal');
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -88,7 +88,7 @@
                     <li class="page-scroll">
                         <a href="#contactos"><span class="glyphicon glyphicon-phone-alt"></span> Contacto</a>
                     </li>
-                    <?php 
+                    <?php
                         if (!isset($_SESSION['user'])) {
                             echo '<li class="page-scroll">
                             <a href="'.BASEURL.'/views/site/login.php"><span class="glyphicon glyphicon-user"></span> Login</a>
@@ -106,5 +106,4 @@
         </div>
         <!-- /.container -->
     </nav>
-    
-<!---------- Hata aqui iria el header ------>
+    <!---------- Hata aqui iria el header ------>

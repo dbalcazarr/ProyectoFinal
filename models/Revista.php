@@ -2,7 +2,7 @@
 
 class Revista extends Modelo{
     public $nombre_tabla = 'revista';
-    public $pk           = 'id_revista';
+    public $pk= 'id_revista';
     
     public $atributos = array(
         'nombre'=>array(),
