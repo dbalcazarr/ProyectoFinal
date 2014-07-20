@@ -82,7 +82,7 @@
                     <?php
                         if(isset($_SESSION['user'])){
                             echo '<li class="page-scroll">
-                                <a href="'.BASEURL.'/views/site/BD.php">Base de Datos</a>
+                                <a href="'.BASEURL.'/views/site/BD.php"><span class="glyphicon glyphicon-hdd"></span> Base de Datos</a>
                                 </li>';
                         }     
                     ?>
