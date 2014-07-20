@@ -8,12 +8,14 @@ class Usuario extends Modelo{
     public $atributos = array(
         'email'=>array(),
         'password'=>array(),
+        'rol'=>array(),
     );
     
     public $errores = array( );
     
     private $email;
     private $password;
+    private $rol;
        
     
     function Usuario(){
