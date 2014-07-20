@@ -1,6 +1,6 @@
 <!-- Formulario de Articulo-->
 <?php 
-//VISTA PROVADA
+//VISTA PRIVADA
   include ('../../libs/security.php');
 
   include ('../../libs/adodb5/adodb-pager.inc.php');

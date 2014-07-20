@@ -1,5 +1,6 @@
-<!-- formulario de Status --><?php 
-//VISTA PROVADA
+<!-- formulario de Status -->
+<?php 
+//VISTA PRIVADA
   include ('../../libs/security.php');
   
   include ('../../libs/adodb5/adodb-pager.inc.php');
