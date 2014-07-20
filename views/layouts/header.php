@@ -1,10 +1,9 @@
 <?php 
-//Esta variable la tienen que cambiar 
+/* Esta variable la tienen que cambiar */
   define('BASEURL','http://localhost:8080/PWeb/ProyectoFinal');
 ?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -107,4 +106,5 @@
         </div>
         <!-- /.container -->
     </nav>
+    
 <!---------- Hata aqui iria el header ------>
