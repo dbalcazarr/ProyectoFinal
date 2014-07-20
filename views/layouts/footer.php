@@ -32,7 +32,8 @@
                             <h3>Art&iacute;culos</h3>
                             <p>Observa los art&iacute;culos que se encuentran en nuestra base de datos</p>
                             <p>
-                                <div class="btn btn-primary fancybox.iframe" role="button"> Mostrar
+                                <div class="btn btn-primary fancybox.iframe" role="button">
+                                <a class="various fancybox.iframe" href= <?php echo '"'.BASEURL.'/views/articulo/view_articulo.php"'; ?> >Mostrar</a>
                                 </div>
                             </p>
                           </div>
@@ -49,7 +50,8 @@
                             <h3>Autores</h3>
                             <p>Observa los autores que se encuentran en nuestra base de datos</p>
                             <p>
-                                <div class="btn btn-primary fancybox.iframe" role="button"> Mostrar
+                                <div class="btn btn-primary fancybox.iframe" role="button"> 
+                                <a class="various fancybox.iframe" href= <?php echo '"'.BASEURL.'/views/autor/view_autor.php"'; ?> >Mostrar</a>
                                 </div>
                             </p>
                           </div>

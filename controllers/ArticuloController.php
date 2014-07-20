@@ -3,7 +3,7 @@
 Contine las clases 
 */
 
-	class ArticuloController extends Articulo {
+	class ArticuloController extends Articulo{
 		
 		//Instancia de la clase Articulo----No necesario para todos los controladores
 		public $muestra_errores = false;

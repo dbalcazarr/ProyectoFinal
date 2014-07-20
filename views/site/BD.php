@@ -21,26 +21,27 @@
                         <div class="page-scroll"  id="btn_opc_inser_bd">
                             <a class="btn btn-circle">
                                 <i class="fa fa-angle-double-down animated"></i>
+                          
                             </a>
                         </div>
 
                     </div>
                 </div>
                 <br />
-                <div class="row" id="opc_inser_bd">
-                    <div class="col-md-6">
-                        <div class="list-group">
-                            <a href="../revista/form_revista.php" class="list-group-item">Revista</a>
-                            <a href="../autor/form_autor.php" class="list-group-item">Autor</a>
-                        </div>
+                    <div class="row" id="opc_inser_bd">
+                            <div class="col-md-6">
+                                <div class="list-group">
+                                    <a href="../revista/form_revista.php" class="list-group-item">Revista</a>
+                                    <a href="../autor/form_autor.php" class="list-group-item">Autor</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="list-group">
+                                    <a href="../articulo/form_articulo.php" class="list-group-item">Art&iacute;culo</a>
+                                    <a href="../status/form_status.php" class="list-group-item">Status</a>
+                                </div>
+                            </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="list-group">
-                            <a href="../articulo/form_articulo.php" class="list-group-item">Art&iacute;culo</a>
-                            <a href="../status/form_status.php" class="list-group-item">Status</a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
