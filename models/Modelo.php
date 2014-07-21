@@ -1,14 +1,4 @@
 <?php
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of Conexion
- *
- * @author Oscar
- */
 
 /*
 Este nos permite realizar inserciones, consultas, etc. en las bases de datos

@@ -1,12 +1,1 @@
-body{
-	background-color:#033;
-	padding-top: 70px;
-}
-
-#container{
-	background-color: rgba(255,255,255,0.5);
-}
-
-#jumbotron{
-	top: 10px;
-}
+/* Si necesitan hacer alguna modificacion de estilo haganla en Estilo.php */
