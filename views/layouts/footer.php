@@ -96,43 +96,22 @@
 
     <div id="map"></div>
 
-    <!-- Core JavaScript Files -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        
     <script src="../js/jquery.min.js"></script>
-
-<!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../js/bootstrap.min.js"></script>
-
-<!-- Add mousewheel plugin (this is optional) -->
+    <script src="../js/main.js"></script>
+    
+    <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-latest.min.js"></script>
     <script type="text/javascript" src="../js/jquery.mousewheel-3.0.6.pack.js"></script>
-<!-- Add fancyBox -->
-    <script type="text/javascript" src="../js/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-    <!--// Add jQuery library -->
-        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-        <!--// Add mousewheel plugin (this is optional) -->
-        <script type="text/javascript" src="../js/jquery.mousewheel-3.0.6.pack.js"></script>
-        <!--// Add fancyBox -->
-        <script type="text/javascript" src="../js/jquery.fancybox.pack.js?v=2.1.5"></script>
-        <!--// Optionally add helpers - button, thumbnail and/or media -->
-        <script type="text/javascript" src="../js/jquery.fancybox-buttons.js?v=1.0.5"></script>
-        <script type="text/javascript" src="../js/jquery.fancybox-media.js?v=1.0.6"></script>
-        <script type="text/javascript" src="../js/jquery.fancybox-thumbs.js?v=1.0.7"></script>
-
-
-<!-- Bootstrap Validator -->
-    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/bootstrapValidator.min.js"></script>
-
-
-<!-- Bootstrap datetimepicker -->
+	<script type="text/javascript" src="../js/jquery.fancybox.pack.js?v=2.1.5"></script>
+	<script type="text/javascript" src="../js/bootstrapValidator.min.js"></script>
     <script type="text/javascript" src="../js/moment.js"></script>
     <script type="text/javascript" src="../js/bootstrap-datetimepicker.js"></script>
-    <script type="text/javascript" src="../js/bootstrap-datetimepicker.es.js"></script> 
+    <script type="text/javascript" src="../js/bootstrap-datetimepicker.es.js"></script>
+    
 
     <!-- Custom Theme JavaScript -->
     <script src="../js/grayscale.js"></script>

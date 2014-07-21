@@ -1,37 +1,19 @@
 <?php
-/*
-Contine las clases 
-*/
-
-	class RevistaController extends Revista {
+	class RevistaController extends Revista{
 		
-		//Instancia de la clase Revista----No necesario para todos los controladores
 		public $muestra_errores = false;
 		function __construct(){
-			 parent::Revista();
+			parent::Revista();
 		}
-
-		//Funcion para insertar una revista
-		public function inserta_revista($datos, $files){
-			//Solo es para acegurarse que se estan enviando los archivos
+		
+		public function insertaRevista($datos, $archivos){
+			echo "<pre>datos:";
+			print_r($datos);
+			print_r($archivos);
+			echo "</pre>";
 			
-			$portada_name=$files['portada']['name'];
-		    $portada_size=$files['portada']['size'];
-		    $portada_type=$files['portada']['type'];
-		    $portada_tmp_name=$files['portada']['tmp_name'];
-
-		    echo "<pre>";
-		      print_r($datos);
-		      print_r($files);
-		    echo "</pre> desde controller";
-
-		    //die();
-		    
-			//Conexion con Equipo el cual continene Modelo y Conexion
-			//$revista=new Revista();
-
 			$this->set_nombre($datos['nombre']);
-			$this->set_portada($files['portada']);
+			$this->set_portada($archivos['portada']);
 			$this->set_fecha($datos['fecha']);
 			$this->set_volumen($datos['volumen']);
 			$this->set_titulo($datos['titulo']);
@@ -40,61 +22,50 @@ Contine las clases
 			$this->set_clave($datos['clave']);
 			$this->set_directorio($datos['directorio']);
 			$this->set_editorial($datos['editorial']);
-			$this->set_id_status($datos['id_status']);
-
-			//Verificar si existen errores
-			if(count ($this->errores)>0){
-				$this->muestra_errores = true;
+			$this->set_idstatus($datos['id_status']);
+		}
+		
+		public function muestraErrores($datos,$archivos)
+		{
+			if(count($this->errores)>0)
+			{
+				$this->muestra_errores=true;
 				
-				//print_r($revista->errores);
-				/*
-				die();*/
 			}
-			else{
-				//Copiar la direccion del archivo a un nueva carpeta
-				move_uploaded_file($files['portada']['tmp_name'], "../imagen/".$files['portada']['name']);
-				//Insertar en la Base de datos
+			if($this->muestra_errores)
+			{
+					foreach($this->errores as $value)
+					{	
+						echo "<div class='alert alert-danger'>";
+						echo "<p>$value</p>";
+						echo "</div>";
+					}
+			}
+			else
+			{	move_uploaded_file($archivos["portada"]["tmp_name"],
+				 "../imagenesSubidas/".$archivos["portada"]["name"]);
 				$this->inserta($this->get_atributos());
-				echo '<div class="alert alert-success" role="alert">Insercion Correcta</div>';
-			};
-
-			//Detener un script *die();
-		}
-
-		public function errores(){
-			if ($this->muestra_errores) {
-				echo '<div class="alert alert-danger">';
-                	foreach ($this->errores as $value) {
-                  	echo "<p>".$value."</p>";
-                	}  
-            	echo '</div>';
+				
+				echo "<div class='alert alert-success'>";
+						echo "Datos registrados exitosamente";
+						echo "</div>";
+				
 			}
 		}
-		/*public function validaUsuario($datos){
-			$rs = $this->consulta_sql(" select * from usuarios where email = '".$datos['email']."'  ");
-        	$rows = $rs->GetArray();
-        	if(count($rows) > 0){
-        		if ($rows['0']['password']== md5($datos['password'])) {
-        			$this->iniciarSesion($rows['0']['rol'],$rows['0']['email']);
-        		}else{
-		     		$this->muestra_errores = true;
-		     		$this->errores[] = 'Password incorrecto';
-		     	}
-	     	}else{
-	     		$this->muestra_errores = true;
-	     		$this->errores[] = 'este email no existe';
-	     	}
-
-		}
+		
+		
 		public function iniciarSesion($rol,$email){
 			$_SESSION['user'] = $rol;
 			$_SESSION['email'] = $email;
-			header("Location: inicio.php");
+			header("Location: equipo.php");
 		}
 
 		public function cerrarSesion(){
 			session_destroy();
-			header("Location: inicio.php");
-		}*/
+			header("Location: equipo.php");
+		}
+
 	}
+
+
 ?>

@@ -2,202 +2,234 @@
 
 class Revista extends Modelo{
     public $nombre_tabla = 'revista';
-    public $pk= 'id_revista';
+    public $pk = 'id_revista';
+    
     
     public $atributos = array(
         'nombre'=>array(),
         'portada'=>array(),
         'fecha'=>array(),
-        'volumen'=>array(),
+		'volumen'=>array(),
         'titulo'=>array(),
         'subtitulo'=>array(),
-        'numero'=>array(),
+		'numero'=>array(),
         'clave'=>array(),
         'directorio'=>array(),
-        'editorial'=>array(),
+		'editorial'=>array(),
         'id_status'=>array(),
     );
-
+    
     public $errores = array( );
     
     private $nombre;
-	private $portada;
-	private $fecha;
-	private $volumen;
+    private $portada;
+    private $fecha;
+    private $volumen;
 	private $titulo;
-	private $subtitulo;
+    private $subtitulo;
 	private $numero;
 	private $clave;
-	private $directorio;
+    private $directorio;
 	private $editorial;
 	private $id_status;
+	
        
-
-//Instancia del objeto modelo para implementar la conexion con la base de datos
+    
     function Revista(){
         parent::Modelo();
     }
     
     public function get_atributos(){
         $rs = array();
-            foreach ($this->atributos as $key => $value) {
+        foreach ($this->atributos as $key => $value) {
             $rs[$key]=$this->$key;
         }
         return $rs;
     }
     
-//Nombre
-    public function get_nombre(){
+    //1--------------------------------------------------------------------------------------------------
+    public function get_nombre()
+	{
         return $this->nombre;
     } 
-    public function set_nombre($valor){
-        //objeto de la clase Er
+
+    public function set_nombre($valor)
+	{
         $er = new Er();
-        if ( !$er->valida_nombre($valor) ){
-            $this->errores[] = 'Nombre no valido ('.$valor.').';
-        }
-        //trim simplemente quita espacios al principio y final de la cadena
-        $this->nombre = trim($valor);
+			if ( !$er->valida_nombre($valor) )
+			{
+				$this->errores[] = "Este nombre (".$valor.") no es valido";
+			}      
+			$this->nombre = trim($valor);
     }
-//Portada
+
+	//2--------------------------------------------------------------------------------------------------
     public function get_portada(){
         return $this->portada;
     } 
+
     public function set_portada($valor){
-        //objeto de la clase Er
-        $er = new Er();
-        if ( !$er->valida_imagen_name($valor['name'])){
-            $this->errores[] = 'Formato de imagen no valido ('.$valor["name"].').';
-        }
-         if ( !$er->valida_imagen_type($valor['type'])){
-            $this->errores[] = 'Formato de imagen no valido ('.$valor["type"].').';
-        }
+
+       $er = new Er();
         
-         if ( $valor['size']>500000){
-            $this->errores[] = 'Tamaño de imagen ('.$valor["size"].'). Sobrepasa el tamaño maximo';
-        }
-        //trim simplemente quita espacios al principio y final de la cadena
-        $this->portada = trim($valor['name']);
+		if ( !$er->valida_imagen_name($valor['name']) )
+		{
+				$this->errores[] = "Este no es un archivo de imagen (".$valor['name'].") no es valido";
+		}
+		else
+		{
+			if ( ($valor['size'])>500000 || ($valor['size'])<1 )
+			{
+           		 $this->errores[] = "Esta imagen (".$valor['name'].") excede el limite permitido";
+        	}    
+			$this->portada = trim($valor['name']);
+		}
+        
     }
-//fecha
-   public function get_fecha(){
+	//3--------------------------------------------------------------------------------------------------
+    public function get_fecha(){
         return $this->fecha;
     } 
+
     public function set_fecha($valor){
-        //objeto de la clase Er
+
         $er = new Er();
-        /*
-        if ( !$er->valida_fecha($valor) ){
-            $this->errores[] = 'Formato de fecha no valido ('.$valor.').';
-        }
-        */
-        //trim simplemente quita espacios al principio y final de la cadena
+        
+        if ( !$er->valida_fecha($valor) )
+		{
+            $this->errores[] = "Esta fecha (".$valor.") no es valida";
+        }      
         $this->fecha = trim($valor);
     }
-//volumen
-	public function get_volumen(){
+	//4--------------------------------------------------------------------------------------------------
+    public function get_volumen(){
         return $this->volumen;
     } 
+
     public function set_volumen($valor){
-        //objeto de la clase Er
+
         $er = new Er();
-        if ( !$er->valida_numero_entero($valor) ){
-            $this->errores[] = 'Formato de volumen no valido ('.$valor.').';
-        }
-        //trim simplemente quita espacios al principio y final de la cadena
+        
+        if ( !$er->valida_numero_entero($valor) )
+		{
+            $this->errores[] = "Este volumen (".$valor.") no es valido";
+        }      
         $this->volumen = trim($valor);
     }
-//Titulo
+	//5--------------------------------------------------------------------------------------------------
     public function get_titulo(){
         return $this->titulo;
     } 
+
     public function set_titulo($valor){
-        //objeto de la clase Er
+
         $er = new Er();
-        if ( !$er->valida_nombre($valor) ){
-            $this->errores[] = 'Formato de titulo no valido ('.$valor.').';
-        }
-        //trim simplemente quita espacios al principio y final de la cadena
+        
+        if ( !$er->valida_nombre($valor) )
+		{
+            $this->errores[] = "Este titulo (".$valor.") no es valido";
+        }      
         $this->titulo = trim($valor);
     }
-//Subtitulo
-	public function get_subtitulo(){
-        return $this->subtitulo;
+	//5--------------------------------------------------------------------------------------------------
+    public function get_subtitulo(){
+        return $this->titulo;
     } 
+
     public function set_subtitulo($valor){
-        //objeto de la clase Er
+
         $er = new Er();
-        if ( !$er->valida_nombre($valor) ){
-            $this->errores[] = 'Formato de subtitulo no valido ('.$valor.').';
-        }
-        //trim simplemente quita espacios al principio y final de la cadena
+        
+        if ( !$er->valida_nombre($valor) )
+		{
+            $this->errores[] = "Este titulo (".$valor.") no es valido";
+        }      
         $this->subtitulo = trim($valor);
     }
-//Numero
+	//6--------------------------------------------------------------------------------------------------
     public function get_numero(){
         return $this->numero;
     } 
+
     public function set_numero($valor){
-        //objeto de la clase Er
+
         $er = new Er();
-        if ( !$er->valida_numero_decimales($valor) ){
-            $this->errores[] = 'Formato de numero no valido ('.$valor.').';
-        }
-        //trim simplemente quita espacios al principio y final de la cadena
+        
+        if ( !$er->valida_numero_entero($valor) )
+		{
+            $this->errores[] = "Este numero (".$valor.") no es valido";
+        }      
         $this->numero = trim($valor);
     }
-//Clave
+	//7--------------------------------------------------------------------------------------------------
     public function get_clave(){
         return $this->clave;
     } 
+
     public function set_clave($valor){
-        //objeto de la clase Er
+
         $er = new Er();
-        if ( !$er->valida_clave($valor) ){
-            $this->errores[] = 'Formato de clave no valido ('.$valor.').';
-        }
-        //trim simplemente quita espacios al principio y final de la cadena
+        
+        if ( !$er->valida_nombre($valor) )
+		{
+            $this->errores[] = "Este numero (".$valor.") no es valido";
+        }      
         $this->clave = trim($valor);
     }
-//directorio
+	//8--------------------------------------------------------------------------------------------------
     public function get_directorio(){
         return $this->directorio;
     } 
+
     public function set_directorio($valor){
-        //objeto de la clase Er
+
         $er = new Er();
-        if ( !$er->valida_nombre($valor) ){
-            $this->errores[] = 'Formato de directorio no valido ('.$valor.').';
-        }
-        //trim simplemente quita espacios al principio y final de la cadena
+        
+        if ( !$er->valida_nombre($valor) )
+		{
+            $this->errores[] = "Este directorio (".$valor.") no es valido";
+        }      
         $this->directorio = trim($valor);
     }
-//editorial
+	//9--------------------------------------------------------------------------------------------------
     public function get_editorial(){
         return $this->editorial;
     } 
+
     public function set_editorial($valor){
-        //objeto de la clase Er
+
         $er = new Er();
-        if ( !$er->valida_nombre($valor) ){
-            $this->errores[] = 'Formato de editorial no valido ('.$valor.').';
-        }
-        //trim simplemente quita espacios al principio y final de la cadena
+        
+        if ( !$er->valida_nombre($valor) )
+		{
+            $this->errores[] = "Esta editorial (".$valor['name'].") no es valido";
+        }      
         $this->editorial = trim($valor);
     }
-//id_status
-    public function get_id_status(){
+	//10--------------------------------------------------------------------------------------------------
+    public function get_idstatus(){
         return $this->id_status;
     } 
-    public function set_id_status($valor){
-        //objeto de la clase Er
+
+    public function set_idstatus($valor){
+
         $er = new Er();
-        if ( !$er->valida_numero_entero($valor) ){
-            $this->errores[] = 'Formato de ID no valido ('.$valor.').';
-        }
-        //trim simplemente quita espacios al principio y final de la cadena
+        
+        if ( !$er->valida_numero_entero($valor) )
+		{
+            $this->errores[] = "Este estatus (".$valor['name'].") no es valido";
+        }      
         $this->id_status = trim($valor);
     }
+	
+	
+	
+	
+
+
+    
+    
+    
 }
 
 ?>

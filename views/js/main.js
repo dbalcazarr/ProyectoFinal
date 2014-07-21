@@ -39,7 +39,7 @@ $(document).ready(function() {
             });
 
         /* Bootstrapvalidator */
-            $('#registerForm').bootstrapValidator({
+            $('.registerForm').bootstrapValidator({
               message: 'Este valor no es valido',
               feedbackIcons: {
                 valid: 'glyphicon glyphicon-ok',

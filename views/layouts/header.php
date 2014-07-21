@@ -7,30 +7,18 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Revista</title>
 
-    <title>Revista Electronica</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<!-- Bootstrap -->
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        
-<!-- Datepicket -->
-       <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap-datetimepicker.css" />
-
-<!-- Bootstrap Validator -->
-        <link rel="stylesheet" href="../css/bootstrap.css"/>
-        <link rel="stylesheet" href="../css/bootstrapValidator.min.css"/> 
-
-<!-- Fancybox -->
-        <!-- Add fancyBox -->
-        <link rel="stylesheet" href="../css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-        <!-- Optionally add helpers - button, thumbnail and/or media -->
-        <link rel="stylesheet" href="../css/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
-        <link rel="stylesheet" href="../css/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/micss.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrapValidator.min.css"/>
+    <link rel="stylesheet" href="../css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../js/bootstrap-datetimepicker.es.js" />
+    
 
 <!-- Plantilla Bootstrap 
     Lo de abajo es necesario para que la plantilla funcione
