@@ -146,6 +146,18 @@ class Er {
 		} 
 	}
 	
+	//13. Verificar si es archivo pdf
+	public function valida_pdf($valor)
+	{
+		$exp_reg = '%\.(pdf)$%i'; 
+		if (preg_match($exp_reg, $valor))
+		{
+		     return true;
+		} else
+		{ 
+		     return false;
+		} 
+	}
 	
 	
 		

@@ -2,222 +2,245 @@
 
 class Articulo extends Modelo{
     public $nombre_tabla = 'articulo';
-    public $pk           = 'id_articulo';
+    public $pk = 'id_articulo';
+    
     
     public $atributos = array(
-        'nombre'=>array(),
+       'nombre'=>array(),
         'resumen'=>array(),
-        'abstract'=>array(),
-        'introduccion'=>array(),
+        'abstracto'=>array(),
+		'introduccion'=>array(),
         'metodologia'=>array(),
         'contenido'=>array(),
-        'fecha_creacion'=>array(),
+		'fecha_creacion'=>array(),
         'archivo_pdf'=>array(),
         'id_status'=>array(),
-        'conclusiones'=>array(),
+		'conclusiones'=>array(),
         'agradecimientos'=>array(),
-        'referencias'=>array(),
+		'referencias'=>array(),
     );
-
+    
     public $errores = array( );
     
     private $nombre;
-	private $resumen;
-	private $abstract;
-	private $introduccion;
+    private $resumen;
+    private $abstracto;
+    private $introduccion;
 	private $metodologia;
-	private $contenido;
+    private $contenido;
 	private $fecha_creacion;
 	private $archivo_pdf;
-	private $id_status;
+    private $id_status;
 	private $conclusiones;
 	private $agradecimientos;
-    private $referencias;
+	private $referencias;
+	
        
-
-//Instancia del objeto modelo para implementar la conexion con la base de datos
-    function Revista(){
+    
+    function Articulo(){
         parent::Modelo();
     }
     
     public function get_atributos(){
         $rs = array();
-            foreach ($this->atributos as $key => $value) {
+        foreach ($this->atributos as $key => $value) {
             $rs[$key]=$this->$key;
         }
         return $rs;
     }
     
-//Nombre
-    public function get_nombre(){
+    //1--------------------------------------------------------------------------------------------------
+    public function get_nombre()
+	{
         return $this->nombre;
     } 
-    public function set_nombre($valor){
-        //objeto de la clase Er
+
+    public function set_nombre($valor)
+	{
         $er = new Er();
-        if ( !$er->valida_nombre($valor) ){
-            $this->errores[] = 'Nombre no valido ('.$valor.').';
-        }
-        //trim simplemente quita espacios al principio y final de la cadena
-        $this->nombre = trim($valor);
+			if ( !$er->valida_nombre($valor) )
+			{
+				$this->errores[] = "Este nombre (".$valor.") no es valido";
+			}      
+			$this->nombre = trim($valor);
     }
-//Fecha_creacion
-    public function get_fecha_creacion(){
-        return $this->fecha_creacion;
-    } 
-    public function set_fecha_creacion($valor){
-        //objeto de la clase Er
-        /*$er = new Er();
-        if ( !$er->valida_imagen($valor) ){
-            $this->errores[] = 'Formato de imagen no valido ('.$valor.').';
-        }*/
-        //trim simplemente quita espacios al principio y final de la cadena
-        $this->fecha_creacion = trim($valor);
-    }
-//archivo_pdf
-   public function get_archivo_pdf(){
-        return $this->archivo_pdf;
-    } 
-    public function set_archivo_pdf($valor){
-        //objeto de la clase Er
-        $er = new Er();
-        if ( !$er->valida_pdf_name($valor['name']) ){
-            $this->errores[] = 'Formato del archivo no es valido ('.$valor["name"].').';
-        }
-        if ( !$er->valida_pdf_type($valor['type']) ){
-            $this->errores[] = 'Formato del archivo no es valido ('.$valor["type"].').';
-        }
-        if ( $valor['size']>10000000){
-            $this->errores[] = 'Tamaño de imagen ('.$valor["size"].'). Sobrepasa el tamaño maximo';
-        }
-        //trim simplemente quita espacios al principio y final de la cadena
-        $this->archivo_pdf = trim($valor['name']);
-    }
-//id_status
-	public function get_id_status(){
-        return $this->id_status;
-    } 
-    public function set_id_status($valor){
-        //objeto de la clase Er
-        $er = new Er();
-        if ( !$er->valida_numero_entero($valor) ){
-            $this->errores[] = 'Formato de volumen no valido ('.$valor.').';
-        }
-        //trim simplemente quita espacios al principio y final de la cadena
-        $this->id_status = trim($valor);
-    }
-//resumen
-    public function get_resumen(){
+	//1--------------------------------------------------------------------------------------------------
+    public function get_resumen()
+	{
         return $this->resumen;
     } 
-    public function set_resumen($valor){
-        //objeto de la clase Er
+
+    public function set_resumen($valor)
+	{
         $er = new Er();
-        /*if ( !$er->valida_nombre($valor) ){
-            $this->errores[] = 'Formato de fecha no valido ('.$valor.').';
-        }*/
-        //trim simplemente quita espacios al principio y final de la cadena
-        $this->resumen = trim($valor);
+			if ( !$er->valida_nombre=trim($valor) )
+			{
+				$this->errores[] = "Este resumen (".$valor.") no es valido";
+			}      
+			$this->resumen = trim($valor);
     }
-//abstract
-	public function get_abstract(){
-        return $this->abstract;
+	//1--------------------------------------------------------------------------------------------------
+    public function get_abstracto()
+	{
+        return $this->abstracto;
     } 
-    public function set_abstract($valor){
-        //objeto de la clase Er
+
+    public function set_abstracto($valor)
+	{
         $er = new Er();
-        /*
-        if ( !$er->valida_nombre($valor) ){
-            $this->errores[] = 'Formato de subtitulo no valido ('.$valor.').';
-        }*/
-        //trim simplemente quita espacios al principio y final de la cadena
-        $this->abstract = trim($valor);
+			if ( !$er->valida_nombre=trim($valor) )
+			{
+				$this->errores[] = "Esta abstraccion (".$valor.") no es valida";
+			}      
+			$this->abstracto = trim($valor);
     }
-//introduccion
-    public function get_introduccion(){
+	//1--------------------------------------------------------------------------------------------------
+    public function get_introduccion()
+	{
         return $this->introduccion;
     } 
-    public function set_introduccion($valor){
-        //objeto de la clase Er
+
+    public function set_introduccion($valor)
+	{
         $er = new Er();
-        /*
-        if ( !$er->valida_numero_decimales($valor) ){
-            $this->errores[] = 'Formato de numero no valido ('.$valor.').';
-        }*/
-        //trim simplemente quita espacios al principio y final de la cadena
-        $this->introduccion = trim($valor);
+			if ( !$er->valida_nombre=trim($valor) )
+			{
+				$this->errores[] = "Esta introduccion (".$valor.") no es valida";
+			}      
+			$this->introduccion = trim($valor);
     }
-//metodologia
-    public function get_metodologia(){
+	//1--------------------------------------------------------------------------------------------------
+    public function get_metodologia()
+	{
         return $this->metodologia;
     } 
-    public function set_metodologia($valor){
-        //objeto de la clase Er
+
+    public function set_metodologia($valor)
+	{
         $er = new Er();
-        /*
-        if ( !$er->valida_clave($valor) ){
-            $this->errores[] = 'Formato de clave no valido ('.$valor.').';
-        }*/
-        //trim simplemente quita espacios al principio y final de la cadena
-        $this->metodologia = trim($valor);
+			if ( !$er->valida_nombre=trim($valor) )
+			{
+				$this->errores[] = "Esta metodologia (".$valor.") no es valido";
+			}      
+			$this->metodologia = trim($valor);
     }
-//contenido
-    public function get_contenido(){
+	//1--------------------------------------------------------------------------------------------------
+    public function get_contenido()
+	{
         return $this->contenido;
     } 
-    public function set_contenido($valor){
-        //objeto de la clase Er
+
+    public function set_contenido($valor)
+	{
         $er = new Er();
-        /*
-        if ( !$er->valida_nombre($valor) ){
-            $this->errores[] = 'Formato de directorio no valido ('.$valor.').';
-        }*/
-        //trim simplemente quita espacios al principio y final de la cadena
-        $this->contenido = trim($valor);
+			if ( !$er->valida_nombre=trim($valor) )
+			{
+				$this->errores[] = "Este contenido (".$valor.") no es valido";
+			}      
+			$this->contenido = trim($valor);
     }
-//conclusiones
+
+	
+	//3--------------------------------------------------------------------------------------------------
+    public function get_fecha(){
+        return $this->fecha_creacion;
+    } 
+
+    public function set_fecha($valor){
+
+        $er = new Er();
+        
+        if ( !$er->valida_fecha($valor) )
+		{
+            $this->errores[] = "Esta fecha (".$valor.") no es valida";
+        }      
+        $this->fecha_creacion = trim($valor);
+    }
+	//2--------------------------------------------------------------------------------------------------
+    public function get_arhivo(){
+        return $this->archivo_pdf;
+    } 
+
+    public function set_archivo($valor){
+		$er = new Er();
+
+       if ( !$er->valida_pdf($valor['name']) )
+		{
+				$this->errores[] = "Este no es un archivo pdf (".$valor['name'].") no es valido";
+		}
+		else
+		{
+			if ( ($valor['size'])>300000 || ($valor['size'])<1 )
+			{
+           		 $this->errores[] = "Esta imagen (".$valor['name'].") excede el limite permitido";
+        	}    
+			$this->archivo_pdf = trim($valor['name']);
+		}
+        
+    }
+	
+	//6--------------------------------------------------------------------------------------------------
+    public function get_idstatus(){
+        return $this->id_status;
+    } 
+
+    public function set_idstatus($valor){
+
+        $er = new Er();
+        
+        if ( !$er->valida_numero_entero($valor) )
+		{
+            $this->errores[] = "Este id (".$valor.") no es valido";
+        }      
+        $this->id_status = trim($valor);
+    }
+	//7--------------------------------------------------------------------------------------------------
     public function get_conclusiones(){
         return $this->conclusiones;
     } 
+
     public function set_conclusiones($valor){
-        //objeto de la clase Er
+
         $er = new Er();
-        /*
-        if ( !$er->valida_nombre($valor) ){
-            $this->errores[] = 'Formato de editorial no valido ('.$valor.').';
-        }*/
-        //trim simplemente quita espacios al principio y final de la cadena
+        
+        if ( !$er->valida_nombre=trim($valor) )
+		{
+            $this->errores[] = "Esta conclusion (".$valor.") no es valido";
+        }      
         $this->conclusiones = trim($valor);
     }
-//agradecimientos
+	//8--------------------------------------------------------------------------------------------------
     public function get_agradecimientos(){
         return $this->agradecimientos;
     } 
+
     public function set_agradecimientos($valor){
-        //objeto de la clase Er
+
         $er = new Er();
-        /*
-        if ( !$er->valida_numero_entero($valor) ){
-            $this->errores[] = 'Formato de ID no valido ('.$valor.').';
-        }*/
-        //trim simplemente quita espacios al principio y final de la cadena
+        
+        if ( !$er->valida_nombre=trim($valor) )
+		{
+            $this->errores[] = "Estos agradecimientos (".$valor.") no son validos";
+        }      
         $this->agradecimientos = trim($valor);
     }
-//referencias
+	//9--------------------------------------------------------------------------------------------------
     public function get_referencias(){
         return $this->referencias;
     } 
+
     public function set_referencias($valor){
-        //objeto de la clase Er
+
         $er = new Er();
-        /*
-        if ( !$er->valida_numero_entero($valor) ){
-            $this->errores[] = 'Formato de ID no valido ('.$valor.').';
-        }*/
-        //trim simplemente quita espacios al principio y final de la cadena
+        
+        if ( !$er->valida_nombre=trim($valor) )
+		{
+            $this->errores[] = "Esta editorial (".$valor.") no es valido";
+        }      
         $this->referencias = trim($valor);
     }
+	
+    
 }
 
 ?>
-

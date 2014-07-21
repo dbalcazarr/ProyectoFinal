@@ -12,7 +12,7 @@ Contine las clases
 		}
 
 		//Funcion para insertar un articulo
-		public function inserta_articulo($datos, $files){
+		public function insertaArticulo($datos, $files){
 			//Solo es para acegurarse que se estan enviando los archivos
 		    echo "<pre>";
 		      print_r($datos);
@@ -25,79 +25,59 @@ Contine las clases
 			//$articulo=new Articulo();
 
 			$this->set_nombre($datos['nombre']);
-			$this->set_fecha_creacion($datos['fecha_creacion']);
-			$this->set_archivo_pdf($files['archivo_pdf']);
-			$this->set_id_status($datos['id_status']);
+			$this->set_fecha($datos['fecha_creacion']);
+			$this->set_archivo($files['archivo_pdf']);
+			$this->set_idstatus($datos['id_status']);
 			$this->set_resumen($datos['resumen']);
-			$this->set_abstract($datos['abstract']);
+			$this->set_abstracto($datos['abstracto']);
 			$this->set_introduccion($datos['introduccion']);
 			$this->set_metodologia($datos['metodologia']);
 			$this->set_contenido($datos['contenido']);
 			$this->set_conclusiones($datos['conclusiones']);
 			$this->set_agradecimientos($datos['agradecimientos']);
 			$this->set_referencias($datos['referencias']);
-
-			
-
-			//Verificar si existen errores
-			if(count ($this->errores)>0){
-				$this->muestra_errores = true;
-				//print_r($articulo->errores);
-				//die();
+		}
+		public function muestraErrores($datos,$archivos)
+		{
+			if(count($this->errores)>0)
+			{
+				$this->muestra_errores=true;
+				
 			}
-			else{
-				move_uploaded_file($files['archivo_pdf']['tmp_name'], "../document/".$files['archivo_pdf']['name']);
-				//Insertar en la Base de datos
+			if($this->muestra_errores)
+			{
+					foreach($this->errores as $value)
+					{	
+						echo "<div class='alert alert-danger'>";
+						echo "<p>$value</p>";
+						echo "</div>";
+					}
+			}
+			else
+			{	move_uploaded_file($archivos["archivo_pdf"]["tmp_name"],
+				 "../imagenesSubidas/".$archivos["archivo_pdf"]["name"]);
 				$this->inserta($this->get_atributos());
-				echo '<div class="row">
-						<div class="col-md-12">
-							<div class="alert alert-success" role="alert">Insercion Correcta</div>
-						</div>
-					</div>';
-			}
-			
-
-			
-			//Detener un script *die();
-
-		}
-
-		public function errores(){
-			if ($this->muestra_errores) {
-				echo '<div class="alert alert-danger">';
-                	foreach ($this->errores as $value) {
-                  	echo "<p>".$value."</p>";
-                	}  
-            	echo '</div>';
+				
+				echo "<div class='alert alert-success'>";
+						echo "Datos registrados exitosamente";
+						echo "</div>";
+				
 			}
 		}
-
-		/*public function validaUsuario($datos){
-			$rs = $this->consulta_sql(" select * from usuarios where email = '".$datos['email']."'  ");
-        	$rows = $rs->GetArray();
-        	if(count($rows) > 0){
-        		if ($rows['0']['password']== md5($datos['password'])) {
-        			$this->iniciarSesion($rows['0']['rol'],$rows['0']['email']);
-        		}else{
-		     		$this->muestra_errores = true;
-		     		$this->errores[] = 'Password incorrecto';
-		     	}
-	     	}else{
-	     		$this->muestra_errores = true;
-	     		$this->errores[] = 'este email no existe';
-	     	}
-
-		}
+		
+		
 		public function iniciarSesion($rol,$email){
 			$_SESSION['user'] = $rol;
 			$_SESSION['email'] = $email;
-			header("Location: inicio.php");
+			header("Location: equipo.php");
 		}
 
 		public function cerrarSesion(){
 			session_destroy();
-			header("Location: inicio.php");
-		}*/
-	}
-?>
+			header("Location: equipo.php");
+		}
 
+	}
+
+
+?>
