@@ -14,16 +14,17 @@ Contine las clases
 		//Funcion para insertar un articulo
 		public function inserta_articulo($datos, $files){
 			//Solo es para acegurarse que se estan enviando los archivos
-		    echo "<pre>";
+		    /* echo "<pre>";
 		      print_r($datos);
 		      print_r($files);
 		      echo   'Desde Controller';
 
 		    echo "</pre>";
+		    */
 
 			//Conexion con Equipo el cual continene Modelo y Conexion
 			//$articulo=new Articulo();
-
+			
 			$this->set_nombre($datos['nombre']);
 			$this->set_fecha_creacion($datos['fecha_creacion']);
 			$this->set_archivo_pdf($files['archivo_pdf']);

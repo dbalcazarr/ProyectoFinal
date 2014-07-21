@@ -89,7 +89,7 @@ class Modelo extends Conexion {
     public function getDropDown($id_tabla,$nombre_columna,$tabla,$name,$id,$where = ' '){
          $rs = $this->consulta_sql(" select * from $tabla ".$where);
          $rows = $rs->GetArray();
-         $dropDown = '<select class="form-control" id="'.$id.'" name="'.$name.'">';
+         $dropDown = '<select class="form-control" id="'.$id.'" name="'.$name.'"><option value="">Selecciona una opcion</option>';
          foreach ($rows as $key => $value) {
             $dropDown.= '<option value="'.$value[$id_tabla].'">'.utf8_encode($value[$nombre_columna]).'</option>';
          }

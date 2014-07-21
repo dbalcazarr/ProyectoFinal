@@ -101,7 +101,7 @@ class Articulo extends Modelo{
         //objeto de la clase Er
         $er = new Er();
         if ( !$er->valida_numero_entero($valor) ){
-            $this->errores[] = 'Formato de volumen no valido ('.$valor.').';
+            $this->errores[] = 'Status no valido ('.$valor.').';
         }
         //trim simplemente quita espacios al principio y final de la cadena
         $this->id_status = trim($valor);

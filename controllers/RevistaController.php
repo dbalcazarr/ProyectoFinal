@@ -52,7 +52,7 @@ Contine las clases
 			}
 			else{
 				//Copiar la direccion del archivo a un nueva carpeta
-				move_uploaded_file($files['portada']['tmp_name'], "../imagen/".$files['portada']['name']);
+				move_uploaded_file($files['portada']['tmp_name'], "../img/".$files['portada']['name']);
 				//Insertar en la Base de datos
 				$this->inserta($this->get_atributos());
 				echo '<div class="alert alert-success" role="alert">Insercion Correcta</div>';

@@ -34,3 +34,9 @@ body{
 #login{
 	background-color: RGBA(0,0,0,0.7);
 }
+
+#insert{
+    padding-top: 100px;
+    background-color: RGBA(255,255,255,0.5);
+    color: #033;
+}
