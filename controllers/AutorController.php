@@ -7,6 +7,7 @@ Contine las clases
 		
 		//Instancia de la clase Autor----No necesario para todos los controladores
 		public $muestra_errores = false;
+		public $muestra_exito = false;
 		function __construct(){
 			 parent::Autor();
 		}
@@ -33,10 +34,9 @@ Contine las clases
 				die();*/
 			}
 			else{
-			//Insertar en la Base de datos
-			$this->inserta($this->get_atributos());
-			echo '<div class="alert alert-success" role="alert">Insercion Correcta</div>';
-					
+				$this->muestra_exito=true;
+				//Insertar en la Base de datos
+				$this->inserta($this->get_atributos());					
 			}
 		}
 
@@ -47,6 +47,9 @@ Contine las clases
                   	echo "<p>".$value."</p>";
                 	}  
             	echo '</div>';
+			}
+			if ($this->muestra_exito) {
+				echo '<div class="alert alert-success" role="alert">Insercion Correcta</div>';
 			}
 		}
 		/*public function validaUsuario($datos){

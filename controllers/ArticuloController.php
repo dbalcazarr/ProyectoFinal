@@ -60,12 +60,6 @@ Contine las clases
 
 		}
 
-		public function exito(){
-			if ($this->muestra_exito) {
-				echo '<div class="alert alert-success" role="alert">Insercion Correcta</div>';
-			}
-		}
-
 		public function errores(){
 			if ($this->muestra_errores) {
 				echo '<div class="alert alert-danger">';
@@ -73,6 +67,9 @@ Contine las clases
                   	echo "<p>".$value."</p>";
                 	}  
             	echo '</div>';
+			}
+			if ($this->muestra_exito) {
+				echo '<div class="alert alert-success" role="alert">Insercion Correcta</div>';
 			}
 		}
 

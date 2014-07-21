@@ -47,7 +47,6 @@ $ArticuloC = new ArticuloController();
 <!-- Errores o exito -->
           <?php
             $ArticuloC->errores();
-            $ArticuloC->exito();
           ?>
 
             <form class="form-horizontal" role="form" id="registerForm" method="POST" enctype="multipart/form-data">
