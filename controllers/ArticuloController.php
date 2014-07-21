@@ -69,7 +69,7 @@ Contine las clases
             	echo '</div>';
 			}
 			if ($this->muestra_exito) {
-				echo '<div class="alert alert-success" role="alert">Insercion Correcta</div>';
+				echo '<div class="alert alert-success" role="alert"><h4>Insercion Correcta</h4></div>';
 			}
 		}
 

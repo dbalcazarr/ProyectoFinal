@@ -30,7 +30,7 @@
           <div class="row">
               <div class="col-md-12">
                 <div class="page-header">
-                  <h1> <a href="../site/BD.php"><span class="glyphicon glyphicon-user"></span></a> Autor <small>Insertar</small></h1>
+                  <h1> <a href="../site/BD.php"><span class="glyphicon glyphicon-th"></span></a> Autor <small>Insertar</small></h1>
                 </div>
               </div>
             </div>
@@ -49,20 +49,30 @@
 				  <div class="col-md-6">
 				  <div class="form-group">
                     <label for="apellido">Apellidos</label>
-                    <input type="text" class="form-control" id="apellido" placeholder="Apellido(s) del Autor" name="apellido" value="<?php echo $AutorC->get_apellido(); ?>">
+                    <input type="text" class="form-control" id="apellido" placeholder="Apellido(s) del Autor" name="apellidos" value="<?php echo $AutorC->get_apellido(); ?>">
                   </div>
 				  </div>
 				  <div class="col-md-12">
-				  <div class="form-group">
-                    <label for="email">E-Mail</label>
-                    <input type="text" class="form-control" id="email" placeholder="Correo Electrónico" name="email" value="<?php echo $AutorC->get_email(); ?>">
-                  </div>
-                  <input type="submit" class="btn btn-default" value="Enviar">
-                </form>
-                  </div>
+				    <div class="form-group">
+              <label for="email">E-Mail</label>
+                <input type="text" class="form-control" id="email" placeholder="Correo Electrónico" name="email" value="<?php echo $AutorC->get_email(); ?>">
+            </div>
+          </div>
+
+      <div class="row">
+        <div class=col-md-12>
+          <div class="form-group">
+                    <div class="col-sm-12">
+                      <input type="submit" value="Enviar"  />
+                    </div>
+          </div>
         </div>
-		<div class="row">
-                <div class="col-md-12">
+      </div>
+                </form>
+      </div>
+      
+		  <div class="row">
+        <div class="col-md-12">
                 
                 <?php echo $AutorC->show_grid(); ?>
                 
@@ -70,6 +80,7 @@
               </div>
             </div>
         </div>
+      </div>
 </section>
 
 

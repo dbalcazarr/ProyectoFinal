@@ -7,6 +7,7 @@ Contine las clases
 		
 		//Instancia de la clase Status----No necesario para todos los controladores
 		public $muestra_errores = false;
+		public $muestra_exito=true;
 		function __construct(){
 			 parent::Status();
 		}
@@ -31,9 +32,9 @@ Contine las clases
 				die();*/
 			}
 			else{
-			//Insertar en la Base de datos
-			$this->inserta($this->get_atributos());
-			echo '<div class="alert alert-success" role="alert">Insercion Correcta</div>';
+				$this->muestra_exito=true;
+				//Insertar en la Base de datos
+				$this->inserta($this->get_atributos());
 			}
 			//Detener un script *die();
 
@@ -46,6 +47,9 @@ Contine las clases
                   	echo "<p>".$value."</p>";
                 	}  
             	echo '</div>';
+			}
+			if ($this->muestra_exito) {
+				echo '<div class="alert alert-success" role="alert"><h4>Insercion Correcta</h4></div>';
 			}
 		}
 

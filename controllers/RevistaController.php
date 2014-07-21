@@ -7,6 +7,7 @@ Contine las clases
 		
 		//Instancia de la clase Revista----No necesario para todos los controladores
 		public $muestra_errores = false;
+		public $muestra_exito = true;
 		function __construct(){
 			 parent::Revista();
 		}
@@ -51,11 +52,11 @@ Contine las clases
 				die();*/
 			}
 			else{
+				$yhis->muestra_exito=true;
 				//Copiar la direccion del archivo a un nueva carpeta
 				move_uploaded_file($files['portada']['tmp_name'], "../img/".$files['portada']['name']);
 				//Insertar en la Base de datos
 				$this->inserta($this->get_atributos());
-				echo '<div class="alert alert-success" role="alert">Insercion Correcta</div>';
 			};
 
 			//Detener un script *die();
@@ -68,6 +69,9 @@ Contine las clases
                   	echo "<p>".$value."</p>";
                 	}  
             	echo '</div>';
+			}
+			if ($this->muestra_exito) {
+				echo '<div class="alert alert-success" role="alert"><h4>Insercion Correcta</h4></div>';
 			}
 		}
 		/*public function validaUsuario($datos){
