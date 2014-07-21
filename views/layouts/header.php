@@ -1,6 +1,6 @@
 <?php
 /* Esta variable la tienen que cambiar */
-  define('BASEURL','http://localhost:8080/PWeb/ProyectoFinal');
+  define('BASEURL','http://localhost/ProyectoFinal');
 ?>
 <!DOCTYPE html>
 <html lang="es">
