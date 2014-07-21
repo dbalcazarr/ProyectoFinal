@@ -30,7 +30,7 @@ Contine las clases
 			$this->set_archivo_pdf($files['archivo_pdf']);
 			$this->set_id_status($datos['id_status']);
 			$this->set_resumen($datos['resumen']);
-			$this->set_abstract($datos['abstract']);
+			$this->set_abstract($datos['abstracto']);
 			$this->set_introduccion($datos['introduccion']);
 			$this->set_metodologia($datos['metodologia']);
 			$this->set_contenido($datos['contenido']);

@@ -7,7 +7,7 @@ class Articulo extends Modelo{
     public $atributos = array(
         'nombre'=>array(),
         'resumen'=>array(),
-        'abstract'=>array(),
+        'abstracto'=>array(),
         'introduccion'=>array(),
         'metodologia'=>array(),
         'contenido'=>array(),
@@ -23,7 +23,7 @@ class Articulo extends Modelo{
     
     private $nombre;
 	private $resumen;
-	private $abstract;
+	private $abstracto;
 	private $introduccion;
 	private $metodologia;
 	private $contenido;
@@ -119,9 +119,9 @@ class Articulo extends Modelo{
         //trim simplemente quita espacios al principio y final de la cadena
         $this->resumen = trim($valor);
     }
-//abstract
+//abstracto
 	public function get_abstract(){
-        return $this->abstract;
+        return $this->abstracto;
     } 
     public function set_abstract($valor){
         //objeto de la clase Er
@@ -131,7 +131,7 @@ class Articulo extends Modelo{
             $this->errores[] = 'Formato de subtitulo no valido ('.$valor.').';
         }*/
         //trim simplemente quita espacios al principio y final de la cadena
-        $this->abstract = trim($valor);
+        $this->abstracto = trim($valor);
     }
 //introduccion
     public function get_introduccion(){
