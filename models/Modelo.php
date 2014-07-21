@@ -1,5 +1,4 @@
 <?php
-
 /*
 Este nos permite realizar inserciones, consultas, etc. en las bases de datos
 Esta clase ereda de Conexion para realizar la conexion a las bases de datos    
@@ -79,7 +78,7 @@ class Modelo extends Conexion {
     public function getDropDown($id_tabla,$nombre_columna,$tabla,$name,$id,$where = ' '){
          $rs = $this->consulta_sql(" select * from $tabla ".$where);
          $rows = $rs->GetArray();
-         $dropDown = '<select class="form-control" id="'.$id.'" name="'.$name.'"><option value="">Selecciona una opcion</option>';
+         $dropDown = '<select class="form-control" id="'.$id.'" name="'.$name.'">';
          foreach ($rows as $key => $value) {
             $dropDown.= '<option value="'.$value[$id_tabla].'">'.utf8_encode($value[$nombre_columna]).'</option>';
          }

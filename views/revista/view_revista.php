@@ -1,6 +1,7 @@
+<!**-- Vista pública-->
 <?php
-
-  include ('../layouts/header.php');
+session_start();
+  //include ('../layouts/header.php');
   include ('../../libs/adodb5/adodb-pager.inc.php');
   include ('../../libs/adodb5/adodb.inc.php');
   include ('../../models/Conexion.php');
@@ -15,7 +16,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -23,6 +24,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <title>Revista Electronica</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -44,7 +46,6 @@
         <link rel="stylesheet" href="../css/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
 
 </head>
-
 <body>
     
     <div class="row">
@@ -101,8 +102,5 @@
 -->
     <script src="../js/main.js"></script>
 
-
-
 </body>
-
 </html>

@@ -1,7 +1,7 @@
 <?php
 
 class Usuario extends Modelo{
-    public $nombre_tabla = 'usuarios';
+    public $nombre_tabla = 'usuario';
     public $pk = 'id_usuario';
     
     
