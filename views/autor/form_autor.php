@@ -23,10 +23,9 @@
 
 
 <section class="intro" >
-        <div class="intro-body" id="insert">
-            <div class="container">
+        <div class="intro-body" id="BD1">
+            <div class="container" id="insert">
                             
-          
           <!-------->
           <div class="row">
               <div class="col-md-12">
