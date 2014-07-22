@@ -40,3 +40,9 @@ body{
     background-color: RGBA(255,255,255,0.5);
     color: #033;
 }
+#insert table{
+    font-size: 10px;
+}
+#datetimepicker6{
+    color: black;
+}

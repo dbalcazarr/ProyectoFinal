@@ -64,7 +64,7 @@
         </div> <!-- Fin de row -->
     </section>
 
-    <section id="download" class="content-section text-center">
+    <section id="contactos" class="content-section text-center">
         <div class="download-section">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
@@ -79,7 +79,7 @@
         </div>
     </section>
 
-    <section id="contact" class="container content-section text-center">
+    <section id="agradecimientos" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Agradecimientos</h2>
@@ -118,6 +118,15 @@
         <script type="text/javascript" src="../js/jquery.fancybox-media.js?v=1.0.6"></script>
         <script type="text/javascript" src="../js/jquery.fancybox-thumbs.js?v=1.0.7"></script>
 
+<!-- Script personalizado
+    Todas las funciones deben estar
+    dentro de este archivo 
+-->
+    <script src="../js/main.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../js/grayscale.js"></script>
+
 
 <!-- Bootstrap Validator -->
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
@@ -129,15 +138,7 @@
     <script type="text/javascript" src="../js/bootstrap-datetimepicker.js"></script>
     <script type="text/javascript" src="../js/bootstrap-datetimepicker.es.js"></script> 
 
-    <!-- Custom Theme JavaScript -->
-    <script src="../js/grayscale.js"></script>
 
-
-<!-- Script personalizado
-    Todas las funciones deben estar
-    dentro de este archivo 
--->
-    <script src="../js/main.js"></script>
 
 
 

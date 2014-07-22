@@ -6,14 +6,14 @@ class Autor extends Modelo{
     
     public $atributos = array(
         'nombre'=>array(),
-        'apellido'=>array(),
+        'apellidos'=>array(),
         'email'=>array(),
     );
 
     public $errores = array( );
     
     private $nombre;
-	private $apellido;
+	private $apellidos;
 	private $email;
        
 
@@ -45,7 +45,7 @@ class Autor extends Modelo{
     }
 //Apellido
     public function get_apellido(){
-        return $this->apellido;
+        return $this->apellidos;
     } 
     public function set_apellido($valor){
         //objeto de la clase Er
@@ -54,7 +54,7 @@ class Autor extends Modelo{
             $this->errores[] = 'Apellido no valido ('.$valor.').';
         }
         //trim simplemente quita espacios al principio y final de la cadena
-        $this->apellido = trim($valor);
+        $this->apellidos = trim($valor);
     }
 //Email
    public function get_email(){

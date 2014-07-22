@@ -24,7 +24,7 @@ Contine las clases
 			//$autor=new Autor();
 
 			$this->set_nombre($datos['nombre']);
-			$this->set_apellido($datos['apellido']);
+			$this->set_apellido($datos['apellidos']);
 			$this->set_email($datos['email']);
 
 			//Verificar si existen errores

@@ -1,6 +1,6 @@
 <?php
 /* Esta variable la tienen que cambiar */
-  define('BASEURL','http://localhost:8080/PrograWebVerano/ProyectoFinal3');
+  define('BASEURL','http://localhost:8080/PWeb/ProyectoFinal');
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -47,6 +47,7 @@
 
 <!-- Nuestro estilo -->
     <link href="../css/Estilo.css" rel="stylesheet">
+
 
 </head>
 
