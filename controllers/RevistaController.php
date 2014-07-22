@@ -7,11 +7,10 @@ Contine las clases
 		
 		//Instancia de la clase Revista----No necesario para todos los controladores
 		public $muestra_errores = false;
-<<<<<<< HEAD
+
 		public $muestra_exito = false;
-=======
-		public $muestra_exito = true;
->>>>>>> 384d4d9d37e8324538f053e8df5e4fe924106816
+
+
 		function __construct(){
 			 parent::Revista();
 		}
