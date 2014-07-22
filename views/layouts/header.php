@@ -1,6 +1,10 @@
 <?php
 /* Esta variable la tienen que cambiar */
+<<<<<<< HEAD
   define('BASEURL','http://localhost/ProyectoFinal');
+=======
+  define('BASEURL','http://localhost:8080/PWeb/ProyectoFinal');
+>>>>>>> 384d4d9d37e8324538f053e8df5e4fe924106816
 ?>
 <!DOCTYPE html>
 <html lang="es">

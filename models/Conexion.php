@@ -11,7 +11,11 @@ class Conexion {
         $this->db->debug = false;
 			       //ip     user      pass    bd
         //$this->db->Connect('localhost','revista1','123','revista');
+<<<<<<< HEAD
         $this->db->Connect('localhost','fifa_333423423','balcazar1801','revista');
+=======
+        $this->db->Connect('localhost','25revista','angel','revista');
+>>>>>>> 384d4d9d37e8324538f053e8df5e4fe924106816
     }   
 }
 ?>
