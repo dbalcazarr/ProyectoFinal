@@ -7,6 +7,7 @@ Contine las clases
 		
 		//Instancia de la clase Articulo----No necesario para todos los controladores
 		public $muestra_errores = false;
+		public $muestra_exito = false;
 		function __construct(){
 			 parent::Articulo();
 		}
@@ -47,14 +48,10 @@ Contine las clases
 				//die();
 			}
 			else{
+				$this->muestra_exito=true;
 				move_uploaded_file($files['archivo_pdf']['tmp_name'], "../document/".$files['archivo_pdf']['name']);
 				//Insertar en la Base de datos
 				$this->inserta($this->get_atributos());
-				echo '<div class="row">
-						<div class="col-md-12">
-							<div class="alert alert-success" role="alert">Insercion Correcta</div>
-						</div>
-					</div>';
 			}
 			
 
@@ -70,6 +67,9 @@ Contine las clases
                   	echo "<p>".$value."</p>";
                 	}  
             	echo '</div>';
+			}
+			if ($this->muestra_exito) {
+				echo '<div class="alert alert-success" role="alert"><h4>Insercion Correcta</h4></div>';
 			}
 		}
 

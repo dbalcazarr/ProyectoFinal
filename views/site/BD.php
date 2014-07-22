@@ -38,7 +38,7 @@
                             <div class="col-md-6">
                                 <div class="list-group">
                                     <a href="../articulo/form_articulo.php" class="list-group-item">Art&iacute;culo</a>
-                                    <a href="../status/form_status.php" class="list-group-item">Status</a>
+                                    <a href="../indice/form_indice.php" class="list-group-item">Indice</a>
                                 </div>
                             </div>
                     </div>

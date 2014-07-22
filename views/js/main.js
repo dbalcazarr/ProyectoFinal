@@ -278,7 +278,7 @@ $(document).ready(function() {
                     }
                   }
                 },
-                apellido: {
+                apellidos: {
                   message: 'El apellido no es valido',
                   validators: {
                     notEmpty: {

@@ -32,8 +32,8 @@ $ArticuloC = new ArticuloController();
 ?>
 
 <section class="intro" >
-  <div class="intro-body" id="insert">
-    <div class="container">
+  <div class="intro-body" id="BD1">
+    <div class="container" id="insert">
                 
           
           <!-------->
@@ -44,7 +44,7 @@ $ArticuloC = new ArticuloController();
                 </div>
               </div>
             </div>
-<!-- Errores -->
+<!-- Errores o exito -->
           <?php
             $ArticuloC->errores();
           ?>
@@ -111,7 +111,7 @@ $ArticuloC = new ArticuloController();
                     <label for="id_status" class="col-sm-3 control-label">Estatus: </label>
                     <div class="col-sm-6">
                                                       <!-- $id_tabla,$nombre_columna,$tabla,$name,$id,$where = ' ' -->
-                        <?php echo $ArticuloC->getDropDown('id_status','id_status','status','id_status','articulo_status'); ?>
+                        <?php echo $ArticuloC->getDropDown('id_status','status','status','id_status','id_status'); ?>
                     </div>
                   </div>
 <!-- Contenido -->
