@@ -5,7 +5,7 @@ Contine las clases
 
 	class IndiceController extends Indice {
 		
-		//Instancia de la clase Autor----No necesario para todos los controladores
+		//Instancia de la clase indice----No necesario para todos los controladores
 		public $muestra_errores = false;
 		public $muestra_exito = false;
 		function __construct(){

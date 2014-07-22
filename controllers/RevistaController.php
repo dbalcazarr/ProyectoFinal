@@ -55,7 +55,7 @@ Contine las clases
 				die();*/
 			}
 			else{
-				$yhis->muestra_exito=true;
+				$this->muestra_exito=true;
 				//Copiar la direccion del archivo a un nueva carpeta
 				move_uploaded_file($files['portada']['tmp_name'], "../img/".$files['portada']['name']);
 				//Insertar en la Base de datos
