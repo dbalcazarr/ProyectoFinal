@@ -21,11 +21,8 @@ $RevistaC = new RevistaController();
       print_r($_FILES);
     echo "</pre>";
     //die(); */
-
-    
     
     $RevistaC->inserta_revista($_POST, $_FILES);
-
 
   }
 
@@ -57,7 +54,7 @@ $RevistaC = new RevistaController();
                   <div class="form-group">
                     <label for="nombre" class="col-sm-3 control-label">Nombre</label>
                     <div class="col-sm-6">
-                     <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $RevistaC->get_fecha_creacion(); ?>" />
+                     <input type="text" class="form-control" id="nombre" name="nombre" value= "<?php echo $RevistaC->get_nombre(); ?>" />
                     </div>
                   </div>
 <!--portada-->
@@ -65,7 +62,6 @@ $RevistaC = new RevistaController();
 							<label for="portada" class="col-sm-3 control-label">Portada</label>
                     <div class="col-sm-6">        
                         <input type="file" id="portada" name="portada" />
-                        <p class="help-block">Cargue la imagen de la portada aqui</p>
                     </div>    
                   </div>
 <!-- Fecha -->
@@ -96,8 +92,9 @@ $RevistaC = new RevistaController();
                         <input type="text" class="form-control" id="subtitulo" name="subtitulo" value=" <?php echo $RevistaC->get_subtitulo(); ?>" />
                    </div>
               </div>
-               </div>
-               <div class="col-md-6">
+
+      </div>
+      <div class="col-md-6">
 <!-- Numero -->
 				<div class="form-group">
                         <label for="numero" class="col-sm-3 control-label">N&uacute;mero de la revista</label>

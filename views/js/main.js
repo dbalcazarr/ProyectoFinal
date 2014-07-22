@@ -337,6 +337,6 @@ $(document).ready(function() {
     igual al del ejemplo num 6 de los de datepicker
 */
             $(function () {
-                $('#datetimepicker6').datetimepicker();
+                $('#datetimepicker5').datetimepicker();
             });
 });    

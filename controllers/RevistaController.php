@@ -7,7 +7,6 @@ Contine las clases
 		
 		//Instancia de la clase Revista----No necesario para todos los controladores
 		public $muestra_errores = false;
-
 		public $muestra_exito = false;
 
 
@@ -18,16 +17,6 @@ Contine las clases
 		//Funcion para insertar una revista
 		public function inserta_revista($datos, $files){
 			//Solo es para acegurarse que se estan enviando los archivos
-			
-			$portada_name=$files['portada']['name'];
-		    $portada_size=$files['portada']['size'];
-		    $portada_type=$files['portada']['type'];
-		    $portada_tmp_name=$files['portada']['tmp_name'];
-
-		    echo "<pre>";
-		      print_r($datos);
-		      print_r($files);
-		    echo "</pre> desde controller";
 
 		    //die();
 		    
