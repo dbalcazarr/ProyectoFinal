@@ -15,7 +15,8 @@
 
 //Inicializar el controlador
   $IndiceC = new IndiceController();
-  if(isset($_POST['nombre']))  {
+  if(isset($_POST['titulo']))  {
+
     $IndiceC->inserta_Indice($_POST);
   }
 
